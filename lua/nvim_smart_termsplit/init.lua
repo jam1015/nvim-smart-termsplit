@@ -1,6 +1,5 @@
 local M = {}
 
-
 local function terminal_close_autocmd()
 	local current_buf = vim.api.nvim_get_current_buf()
 	local augroup_name = tostring(current_buf) ..
@@ -73,7 +72,7 @@ function M.term_hsplit()
 	end
 end
 
-function M.setup()
+ M.setup = function ()
 	vim.api.nvim_create_user_command('Tsplit', M.term_hsplit, { bar = true })
 	vim.api.nvim_create_user_command('Tvsplit', M.term_vsplit, { bar = true })
 end
