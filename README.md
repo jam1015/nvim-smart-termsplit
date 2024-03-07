@@ -49,6 +49,21 @@ keymap("t", "<C-a>v", require('neovim-smart-terminal').term_vsplit, opts)
 ```
 
 
+### Other helpful Configuration
+
+```lua
+local keymap = vim.keymap.set
+
+-- generally easier prefix for window related commands
+keymap("n", "<C-a>", "<C-w>", { remap = true, silent = true })
+
+-- switches windows from terminal mode. <C-\><C-n> goes to normal mode from terminal mode
+keymap("t", "<C-a>", "<C-\\><C-n><C-a>", { remap = true, silent = true })
+
+-- to do splits from terminal mode without using this plugin
+keymap("t", "<C-w>", "<C-\\><C-n><C-w>", { remap = true, silent = true })
+```
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0. For
