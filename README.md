@@ -17,9 +17,9 @@ configuration to your Neovim setup:
 ```lua
 require("lazy").setup({
     {
-        'jam1015/neovim-smart-terminal',
+        'jam1015/nvim_smart_termsplit',
         config = function()
-            require('neovim-smart-terminal').setup()
+            require('nvim_smart_termsplit').setup()
         end
     }
 })
@@ -42,10 +42,10 @@ quicker access:
 ```lua
 local opts = { remap = false, silent = true }
 local keymap = vim.keymap.set
-keymap("n", "<C-a>s", require('neovim-smart-terminal').term_hsplit, opts)
-keymap("t", "<C-a>s", require('neovim-smart-terminal').term_hsplit, opts)
-keymap("n", "<C-a>v", require('neovim-smart-terminal').term_vsplit, opts)
-keymap("t", "<C-a>v", require('neovim-smart-terminal').term_vsplit, opts)
+keymap("n", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
+keymap("t", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
+keymap("n", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
+keymap("t", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
 ```
 
 
@@ -63,6 +63,8 @@ keymap("t", "<C-a>", "<C-\\><C-n><C-a>", { remap = true, silent = true })
 -- to do splits from terminal mode without using this plugin
 keymap("t", "<C-w>", "<C-\\><C-n><C-w>", { remap = true, silent = true })
 ```
+
+Note that `remap = true` allows these mappings to act as prefixes.
 
 ## License
 
