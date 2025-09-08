@@ -42,13 +42,15 @@ quicker access:
 ```lua
 local opts = { remap = false, silent = true }
 local keymap = vim.keymap.set
-keymap("n", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
-keymap("t", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
-keymap("n", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
-keymap("t", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
-
-
+keymap("n", "<C-w>s", require('nvim_smart_termsplit').term_hsplit, opts)
+keymap("t", "<C-w>s", require('nvim_smart_termsplit').term_hsplit, opts)
+keymap("n", "<C-w>v", require('nvim_smart_termsplit').term_vsplit, opts)
+keymap("t", "<C-w>v", require('nvim_smart_termsplit').term_vsplit, opts)
+keymap("n", "<C-w>t", require('nvim_smart_termsplit').term_tabnew, opts)
+keymap("t", "<C-w>t", require('nvim_smart_termsplit').term_tabnew, opts)
 -- Fallback to built-in window commands if needed
+keymap("n", "<C-w><C-s>", "<C-w>s", opts)
+keymap("t", "<C-w><C-s>", "<C-\\><C-n><C-w>s", opts)
 keymap("n", "<C-w><C-v>", "<C-w>v", opts)
 keymap("t", "<C-w><C-v>", "<C-\\><C-n><C-w>v", opts)
 keymap("n", "<C-w><C-t>", "<C-w>T", opts)
