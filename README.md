@@ -55,7 +55,7 @@ The plugin provides three commands for creating terminal splits:
 |---------|-------------|----------|
 | `:Tsplit` | Horizontal terminal split | Creates a horizontal split with a new terminal |
 | `:Tvsplit` | Vertical terminal split | Creates a vertical split with a new terminal |
-| `:Ttabnew` | Terminal in new tab | Opens a new tab with a terminal |
+
 
 > **Smart Context Detection:** When executed from within a terminal buffer, these commands automatically detect and preserve the current working directory in the new terminal session.
 
@@ -100,8 +100,7 @@ keymap("n", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
 keymap("t", "<C-a>s", require('nvim_smart_termsplit').term_hsplit, opts)
 keymap("n", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
 keymap("t", "<C-a>v", require('nvim_smart_termsplit').term_vsplit, opts)
-keymap("n", "<C-a>t", require('nvim_smart_termsplit').term_tabnew, opts)
-keymap("t", "<C-a>t", require('nvim_smart_termsplit').term_tabnew, opts)
+
 
 -- Fallback to built-in window commands if needed
 keymap("n", "<C-w><C-v>", "<C-w>v", opts)
