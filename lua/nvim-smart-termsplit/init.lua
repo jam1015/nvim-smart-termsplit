@@ -202,12 +202,7 @@ function M.setup(opts)
         desc = "Create new tab with terminal pwd preservation" 
     })
     
-    -- Optional: Create keymaps
-    if config.keymaps ~= false then
-        vim.keymap.set('t', '<C-w>s', '<C-\\><C-n>:Tsplit<CR>', { desc = "Terminal horizontal split" })
-        vim.keymap.set('t', '<C-w>v', '<C-\\><C-n>:Tvsplit<CR>', { desc = "Terminal vertical split" })
-        vim.keymap.set('t', '<C-w>t', '<C-\\><C-n>:Ttabnew<CR>', { desc = "Terminal new tab" })
-    end
+
     
     debug_log("TermSplit plugin initialized with config: " .. vim.inspect(config))
 end
