@@ -182,7 +182,10 @@ function M.term_hsplit()
     terminal_split('split')
 end
 
-
+function M.term_tabnew()
+    debug_log("Creating terminal in new tab")
+    terminal_split('tabnew')
+end
 
 -- Setup function with configuration
 function M.setup(opts)
@@ -195,6 +198,13 @@ function M.setup(opts)
     vim.api.nvim_create_user_command('Tvsplit', M.term_vsplit, { 
         desc = "Create vertical split with terminal pwd preservation" 
     })
+    vim.api.nvim_create_user_command('Ttabnew', M.term_tabnew, { 
+        desc = "Create new tab with terminal pwd preservation" 
+    })
+    
+
+    
+    debug_log("TermSplit plugin initialized with config: " .. vim.inspect(config))
 end
 
 return M
